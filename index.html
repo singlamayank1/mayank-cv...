@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Mayank's CV - Commerce and Digital Business student from Mandi Dabwali, Haryana, India">
+  <title>Mayank's CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #dbeafe;
+      --secondary: #4b5563;
+      --light: #f3f4f6;
+      --dark: #1f2937;
+      --accent: #0ea5e9;
+      --danger: #ef4444;
+      --success: #10b981;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #f8fafc;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      padding: 40px;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: white;
+      clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
+    }
+    
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    
+    .subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      opacity: 0.9;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    
+    .contact-info {
+      margin-top: 25px;
+    }
+    
+    .contact-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(5px);
+    }
+    
+    .contact-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .contact-list a:hover {
+      text-decoration: underline;
+    }
+    
+    main {
+      padding: 40px;
+    }
+    
+    section {
+      margin-bottom: 35px;
+    }
+    
+    section:last-child {
+      margin-bottom: 0;
+    }
+    
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+    }
+    
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: var(--primary);
+      margin-right: 12px;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    
+    p {
+      margin-bottom: 15px;
+    }
+    
+    .education-list, .cert-list {
+      list-style: none;
+    }
+    
+    .education-list li, .cert-list li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .education-list li:last-child, .cert-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .education-list li::before, .cert-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+    
+    .institution {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: var(--dark);
+      display: block;
+      margin-bottom: 3px;
+    }
+    
+    .degree {
+      color: var(--secondary);
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .year {
+      font-size: 0.85rem;
+      color: var(--secondary);
+      font-style: italic;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    
+    .skill-category {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 12px;
+    }
+    
+    .category-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      color: var(--primary);
+    }
+    
+    .skills-list {
+      list-style: none;
+    }
+    
+    .skills-list li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .skills-list li::before {
+      content: '✓';
+      margin-right: 8px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .cert-list .certification {
+      font-weight: 600;
+      color: var(--secondary);
+    }
+    
+    @media screen and (max-width: 700px) {
+      header, main {
+        padding: 25px;
+      }
+      
+      .container {
+        margin: 20px;
+      }
+      
+      .contact-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media print {
+      body {
+        background: white;
+      }
+      
+      .container {
+        box-shadow: none;
+        margin: 0;
+        max-width: 100%;
+      }
+      
+      header {
+        background: var(--primary);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>MAYANK</h1>
+      <div class="subtitle">Commerce & Digital Business Professional</div>
+      
+      <div class="contact-info">
+        <ul class="contact-list">
+          <li>
+            <span aria-hidden="true">📍</span>
+            <span>Mandi Dabwali, Haryana, India</span>
+          </li>
+          <li>
+            <span aria-hidden="true">📧</span>
+            <a href="mailto:mayankdabwali@gmail.com" aria-label="Email: mayankdabwali@gmail.com">mayankdabwali@gmail.com</a>
+          </li>
+          <li>
+            <span aria-hidden="true">📞</span>
+            <span>7404978023</span>
+          </li>
+        </ul>
+      </div>
+    </header>
+    
+    <main>
+      <section>
+        <h2>Professional Objective</h2>
+        <p>
+          Motivated and ambitious student pursuing a dual degree in Commerce and Digital Business, with strong leadership and problem-solving abilities. Seeking opportunities to apply academic knowledge and contribute to impactful business initiatives.
+        </p>
+      </section>
+      
+      <section>
+        <h2>Education</h2>
+        <ul class="education-list">
+          <li>
+            <span class="institution">Indian Institute of Management Banglore (IIMB)</span>
+            <span class="degree">BBA in Digital Business and Enterprenurship</span>
+            <span class="year">Expected Graduation: 2027</span>
+          </li>
+          <li>
+            <span class="institution">Panjab University</span>
+            <span class="degree">B.Com</span>
+            <span class="year">Expected Graduation: 2026</span>
+          </li>
+          <li>
+            <span class="institution">GMSSS</span>
+            <span class="degree">12th Standard (CBSE Board)</span>
+            <span class="year">Completed in 2023 – Mandi Dabwali, Haryana</span>
+          </li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Core Competencies</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="category-title">Leadership & Communication</div>
+            <ul class="skills-list">
+              <li>Leadership</li>
+              <li>Public Speaking</li>
+              <li>Teamwork</li>
+              <li>Communication</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <div class="category-title">Technical Skills</div>
+            <ul class="skills-list">
+              <li>Advanced Microsoft Excel</li>
+              <li>Basics of Artificial Intelligence</li>
+              <li>Problem Solving</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <h2>Certifications</h2>
+        <ul class="cert-list">
+          <li>
+            <span class="certification">Minor in Artificial Intelligence</span>
+          </li>
+          <li>
+            <span class="certification">Advanced Microsoft Excel</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
